@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>История веба - WWW</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="screen">
+  <title>Таблица с альтернативными стилями</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 50%;
+      margin: 20px auto;
+    }
+
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+
+    .style1 {
+      background-color: lightblue;
+      color: black;
+    }
+
+    .style2 {
+      background-color: lightgreen;
+      color: black;
+    }
+
+    .altStyle1 {
+      background-color: darkblue;
+      color: white;
+    }
+
+    .altStyle2 {
+      background-color: darkgreen;
+      color: white;
+    }
+
+.container {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+    .image {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+    }
+  </style>
+
+<SCRIPT type="text/javascript">
+  <!--
+  var x=document.lastModified;
+  document.write(x);
+  -->
+  
+function navig()
+{
+	document.write("Имя браузера: "+navigator.appName+"<br> Версия браузера: "+navigator.appVersion+"<br> Код браузера:"+navigator.appCodeName+"<br> Платформа:"+navigator.platform+"<br> Агент: "+navigator.userAgent);
+}
+function loc() {
+       document.write ("Имя пользователя: "+location.hostname+"<br> Адрес: "+location.href);
+}
+function scr() {
+document.write("Ширина экрана: "+screen.width+"<br> высота экрана: "+screen.height+"<br> Глубина цвета:"+screen.colorDepth+"<br> Ширина экрана с учетом служебных элементов окна:"+screen.availWidth+"<br> Высота экрана с учетом служебных элементов окна: "+screen.availHeight);
+
+}
+
+function changeSize(element) {
+  element.style.paddingRight = "3cm";
+  element.style.textIndent = "2.5cm";
+}
+
+function restoreSize(element) {
+  element.style.paddingRight = "";
+  element.style.textIndent = "";
+}
+
+function hideImage() {
+      const image2 = document.getElementsByName('image2')[0];
+      image2.style.display = 'none';
+    }
+
+    function showImage() {
+      const image2 = document.getElementsByName('image2')[0];
+      image2.style.display = 'block';
+    }
+
+    function swapLayers() {
+      const image1 = document.getElementsByName('image1')[0];
+      const image3 = document.getElementsByName('image3')[0];
+      const zIndex1 = image1.style.zIndex;
+      const top1 = image1.style.top;
+      const left1 = image1.style.left;
+
+      image1.style.zIndex = image3.style.zIndex;
+      image1.style.top = image3.style.top;
+      image1.style.left = image3.style.left;
+
+      image3.style.zIndex = zIndex1;
+      image3.style.top = top1;
+      image3.style.left = left1;
+    }
+
+</SCRIPT>
+</head>
+<body>
+ &nbsp;<div class="text">
+    <main>
+      <h1>Внедрение анимации в веб-дизайне</h1>
+        <p>Анимация в веб-дизайне является мощным средством, позволяющим создавать интерактивные и привлекательные веб-сайты. 
+Она позволяет делать страницы более динамичными и увлекательными для посетителей. Идея использования анимации в веб-дизайне стала активно развиваться в
+ последние годы, но её корни уходят далеко в прошлое.</p>
+  
+        </details>&nbsp;<h2>Хронология анимации в веб-дизайне</h2>
+<p onmouseover="this.style.color='red'; this.style.fontStyle='italic';" onmouseout="this.style.color=''; this.style.fontStyle='';" class="news"><span class="date">15.06.1987 -  </span>Появление формата GIF (Graphics Interchange Format).</p>
+<p onmouseover="changeSize(this)" onmouseout="restoreSize(this)" class="news"><span class="date">1994 - </span>Появление анимированных GIF-изображений в веб-разработке.</p>
+<p class="news"><span class="date">1996 - </span>Макромедиа выпускает Flash для создания векторной анимации.</p>
+<p class="news"><span class="date">1998 - </span>Интеграция CSS2 с поддержкой анимации.</p>
+<p class="news"><span class="date">2000 - </span>Появление стандарта SMIL для синхронизации мультимедийных презентаций в SVG.</p>
+<p class="news"><span class="date">2009 - </span>Появление библиотеки jQuery для упрощения анимации веб-страниц.</p>
+<p class="news"><span class="date">2010 - </span>Появление стандарта CSS3 с богатыми возможностями анимации и трансформации.</p>
+<p class="news"><span class="date">2016 - </span>Появление библиотеки GreenSock (GSAP) для создания высокопроизводительных анимаций.</p>
+
+    </main>
+</div>
+<FORM name="form1">
+<div class="buttons">
+    <input type="button" value="Window">
+    <input type="button" value="Navigator" onclick="navig()">
+    <input type="button" value="Location" onclick="loc()">
+    <input type="button" value="Screen" onclick="scr()">
+</div>
+
+
+<table>
+    <tr>
+      <th class="style1" onmouseover="this.className='altStyle1'" onmouseout="this.className='style1'">Заголовок 1</th>
+      <th class="style2" onmouseover="this.className='altStyle2'" onmouseout="this.className='style2'">Заголовок 2</th>
+    </tr>
+    <tr>
+      <td class="style1" onmouseover="this.className='altStyle1'" onmouseout="this.className='style1'">Ячейка 1</td>
+      <td class="style2" onmouseover="this.className='altStyle2'" onmouseout="this.className='style2'">Ячейка 2</td>
+    </tr>
+    <tr>
+      <td class="style1" onmouseover="this.className='altStyle1'" onmouseout="this.className='style1'">Ячейка 3</td>
+      <td class="style2" onmouseover="this.className='altStyle2'" onmouseout="this.className='style2'">Ячейка 4</td>
+    </tr>
+  </table>
+<button type="button" onclick="hideImage()">Скрыть средний слой</button>
+<button type="button" onclick="showImage()">Показать средний слой</button>
+<button type="button" onclick="swapLayers()">Поменять слои</button>
+<br> </br>
+<div class="container">
+    <img class="image" src="image1.jpg" alt="Image 1" name="image1" style="z-index: 3; top: 0; left: 0;">
+    <img class="image" src="image2.jpg" alt="Image 2" name="image2" style="z-index: 2; top: 200px; left: 50px;">
+    <img class="image" src="image3.jpg" alt="Image 3" name="image3" style="z-index: 1; top: 400px; left: 100px;">
+
+  </div>
+
+</body>
+</html>
+
+
+
+
+
